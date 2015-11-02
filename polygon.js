@@ -533,7 +533,7 @@ Polygon.prototype = {
     return ret;
   },
 
-  get length() {
+  length: function() {
     return this.points.length
   },
 
@@ -566,7 +566,7 @@ Polygon.prototype = {
   },
 
   equal : function(poly) {
-    var current = poly.length;
+    var current = poly.length();
 
     while(current--) {
       if (!this.point(current).equal(poly.point(current))) {
@@ -689,7 +689,7 @@ Polygon.prototype = {
   },
 
   toArray: function() {
-    var l = this.length;
+    var l = this.length();
     var ret = Array(l);
     for (var i=0; i<l; i++) {
       ret[i] = this.points[i].toArray();
